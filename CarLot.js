@@ -9,11 +9,12 @@ var CarLot = (function () {
     loadInventory: function (callback) {
       var inventoryLoader = new XMLHttpRequest();
       inventoryLoader.open("GET", "inventory.json");
-      inventoryLoader.send()
+      inventoryLoader.send();
       inventoryLoader.addEventListener("load", function () {
         inventory = JSON.parse(event.target.responseText).cars;
         callback(inventory);
+        console.log(inventory);
       });
     }
   };
-})();
+})(CarLot);
